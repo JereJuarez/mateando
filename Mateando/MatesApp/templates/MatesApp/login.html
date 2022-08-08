@@ -1,0 +1,28 @@
+{% extends "MatesApp/padre.html" %}
+
+{% load static %}
+
+
+
+
+
+
+
+{% block contenido_que_cambia %}
+    <h1>{{ mensaje }}</h1>
+    <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+
+        {{ form.as_p }}
+        <button type="submit">INICIAR SESION</button>
+
+
+    </form>
+
+    
+
+                
+
+
+{% endblock %}
+</body>
+</html>
