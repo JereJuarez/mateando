@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from MatesApp.models import Yerba
 from MatesApp.forms import UserRegisterForm
 from MatesApp import models
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 def inicio(request):
     return render(request, "MatesApp/inicio.html")
@@ -15,7 +17,71 @@ def yerbas(request):
 def __str__(self):
     return f"Nombre: {self.nombre} - Edad {self.edad} - Yerba {self.yerba}"
 
+def busquedaMarca(request):
+    return render(request, "MatesApp/busquedaMarca.html")
 
+def busquedaTipo(request):
+    return render(request, "MatesApp/busquedaTipo.html")
+
+def busquedaPeso(request):
+    return render(request, "MatesApp/busquedaPeso.html")
+
+
+
+def buscar(request):
+    if request.GET["marca"]:
+
+        marca= request.GET["marca"]
+        yerbas=Yerba.objects.filter(marca=marca)
+        
+
+        return render(request, "MatesApp/resultadosBusqueda.html", {"yerbas":yerbas, "marca":marca})
+
+    else:
+        
+        return render(request, "MatesApp/error1.html")
+         
+
+
+    return HttpResponse(respuesta)
+    
+def buscar2(request):
+    if request.GET["tipo"]:
+
+        tipo= request.GET["tipo"]
+        yerbas=Yerba.objects.filter(tipo=tipo)
+
+
+        return render(request, "MatesApp/resultadosBusqueda.html", {"yerbas":yerbas, "tipo":tipo})
+
+    else:
+        
+        return render(request, "MatesApp/error2.html")
+         
+         
+
+
+    return HttpResponse(respuesta)
+
+def buscar3(request):
+    if request.GET["peso"]:
+
+        peso= request.GET['peso']
+        yerbas=Yerba.objects.filter(peso=peso)
+
+
+        return render(request, "MatesApp/resultadosBusqueda.html", {"yerbas":yerbas, "peso":peso})
+
+    else:
+
+        return render(request, "MatesApp/error3.html")
+        
+
+        
+         
+         
+
+    return HttpResponse(respuesta)
 
 
 
