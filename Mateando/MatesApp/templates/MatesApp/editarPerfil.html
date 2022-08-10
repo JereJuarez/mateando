@@ -1,0 +1,31 @@
+{% extends "MatesApp/padre.html" %}
+
+{% load static %}
+
+{% block contenido_que_cambia %}
+
+
+<h2> Formulario - Editar Perfil</h2>
+</div> <h3> De {{usuario}} </h3>
+<form action="" method="POST"> {% csrf_token %}
+    
+    <table>
+
+        {{ miFormulario.as_table }}
+    
+
+    </table>
+
+    
+    <p></p><input type="submit", value="enviar">
+<p></p>
+<a class="nav-item" href="{% url 'AgregarAvatar' %}">Cambiar Avatar</a></li>
+</form>
+
+
+                
+                
+                
+
+
+{% endblock %}

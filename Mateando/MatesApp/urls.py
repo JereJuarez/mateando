@@ -1,7 +1,8 @@
 from django.urls import path
 from MatesApp import views
 from django.contrib.auth.views import LogoutView
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.inicio, name="inicio"),
@@ -15,4 +16,6 @@ urlpatterns = [
     path('login/', views.login_request, name= 'login'),
     path('register/', views.register, name = 'register'),
     path('logout/', LogoutView.as_view(template_name='MatesApp/logout.html'), name= 'logout'),
+    path('editarPerfil/', views.editarPerfil,name="EditarPerfil"),
+    path('editarPerfil/agregarAvatar', views.agregarAvatar, name="AgregarAvatar"),
 ]
