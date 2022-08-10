@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    
 
         {% load static %}
 
@@ -10,7 +11,7 @@
         <meta name="author" content="|" />
         <title>Mateando </title>
         <!-- Favicon-->
-        <link type="image/png" sizes="96x96" rel="icon" href="MatesApp/assets/icons8-mate-96.png">
+        <link type="image/png" sizes="96x96" rel="icon" href="MatesApp/static/MatesApp/assets/icons8-mate-96.png">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'MatesApp/css/styles.css' %}" rel="stylesheet" />
     </head>
@@ -25,9 +26,10 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'yerbas' %}">Yerbas</a></li>
                         <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'chat' %}">Chat</a></li>
                         {% if not request.user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link active" href="{% url 'login' %}"><p style="color:#ff0000";>INICIAR SESIÓN</p></a></li>
-                        <li class="nav-item"><a class="nav-link active" href="{% url 'register' %}"><p style="color:#ff0000";>REGISTRARSE</p></a></li>
+                            <li class="nav-item"><a class="nav-link active" href="{% url 'register' %}"><p style="color:#ff0000";>REGISTRARSE</p></a></li>
                         {% else %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'EditarPerfil' %}"><p style="color:#fcfcfc";>  ¿Unos mates {{ request.user.username }}?</p>
                         <li class="nav-item"><a class="nav-link active" href="{% url 'logout' %}"><p style="color:#ff0000";>SALIR</p></a></li>
@@ -158,9 +160,8 @@
         </div>
         <!-- Footer-->
         {% endblock%} 
-
-
-        <footer class="py-5 bg-dark">
+        
+        <footer class="py-4 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Mateando 2022</p></div>
         </footer>
         <!-- Bootstrap core JS-->

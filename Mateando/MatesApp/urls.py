@@ -18,4 +18,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='MatesApp/logout.html'), name= 'logout'),
     path('editarPerfil/', views.editarPerfil,name="EditarPerfil"),
     path('editarPerfil/agregarAvatar', views.agregarAvatar, name="AgregarAvatar"),
+    path('chat/', views.chat, name='chat'),
 ]

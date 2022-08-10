@@ -182,18 +182,20 @@ def agregarAvatar(request):
 
         if formulario.is_valid:
 
-            avatarViejo= Avatar.objects.get(user=request.user)
-            if(avatarViejo.avatar):
-                avatarViejo.delete()
-            avatar=Avatar(user=request.user, imagen=formulario.cleaned_data['imagen'])
-            avatar.save()               
+            u= Avatar.objects.get(user=request.user)
+            avatar= Avatar (user=u, imagen=formulario.cleaned_data['imagen'])
+            avatar.save()            
+            return render(request, "MatesApp/inicio.html")   
 
     else:
         formulario= AvatarForm()
 
-    return render(request, "MatesApp/agregarAvatar.html", {"formulario":formulario, 'usuario': request.user}) 
+    return render(request, "MatesApp/agregarAvatar.html", {"formulario":formulario}) 
 
 
+@login_required
+def chat(request):
+    return render(request, "MatesApp/chat.html")
 
 
 
