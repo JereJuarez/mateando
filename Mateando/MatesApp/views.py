@@ -214,6 +214,9 @@ def agregarAvatar(request):
 def chat(request):
     return render(request, "MatesApp/chat.html")
 
+def ms(request):
+    return render(request, "MatesApp/dm.html")
+
  
 
 class Inbox(View):
