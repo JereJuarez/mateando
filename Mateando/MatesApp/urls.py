@@ -23,9 +23,9 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='MatesApp/logout.html'), name= 'logout'),
     path('editarPerfil/', views.editarPerfil,name="EditarPerfil"),
     path('agregarAvatar', views.agregarAvatar, name="agregarAvatar"),
-    path('inbox/dm/<str:username>', views.mensajes_privados, name='chat'  ),
-    path('ms/<str:username>', views.DetailMs.as_view(), name="detailms" ),
+    path('dm/<str:username>', views.mensajes_privados, name='chat'  ),
+    path('inbox/ms/<str:username>', views.DetailMs.as_view(), name="detailms" ),
     re_path(UUID_CANAL_REGEX, views.CanalDetailView.as_view()),
     path('inbox/', views.Inbox.as_view(), name="inbox" ),
-    path('inbox/dm/', views.ms, name="dm")
+    path('inbox/ms/', views.ms, name="dm")
 ]
