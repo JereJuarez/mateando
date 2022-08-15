@@ -25,16 +25,16 @@ from django.conf.urls import handler404
 @login_required
 def inicio(request):
 
-    avatares= Avatar.objects.filter(user=request.user.id)
+    #avatares= Avatar.objects.filter(user=request.user.id)    (chilla)
 
-    return render(request, "MatesApp/inicio.html", {"url":avatares[0].imagen.url})
+    return render(request, "MatesApp/inicio.html") #{"url":avatares[0].imagen.url})
 
 @login_required
 def yerbas(request):
     
-    avatares= Avatar.objects.filter(user=request.user.id)
+    #avatares= Avatar.objects.filter(user=request.user.id)    (chilla)
 
-    return render(request, "MatesApp/yerbas.html", {"url":avatares[0].imagen.url})
+    return render(request, "MatesApp/yerbas.html") #{"url":avatares[0].imagen.url})
 
 def __str__(self):
     return f"Nombre: {self.nombre} - Edad {self.edad} - Yerba {self.yerba}"
