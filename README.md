@@ -1,2 +1,14 @@
 # mateando
  
+ INTEGRANTES:
+
+ - Ayet, Franco
+ - Juárez, Franco Jeremías
+
+ Juárez, Franco Jeremías:
+
+ - Realizó los sistemas de login, logout, register y update de los usuarios "materos" (incluida la foto de perfil). Tambien realizó el apartado yerbas donde habra buscadores para diferentes tipos de yerbas y en un futuro para termos, mates y bombillas. Además hizo todo lo que respecta a el chat interno.
+
+ Ayet, Franco:
+
+ - Realizó todo lo que respecta a los post del blog, además fue el autor de los test-pilot y el video demostrativo sobre la página. Tambien realizó la vista "acerca de mi"
