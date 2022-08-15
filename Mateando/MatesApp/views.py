@@ -297,7 +297,7 @@ class CanalDetailView(LoginRequiredMixin, CanalFormMixin, DetailView ):
     #    qs= Canal.objects.all().filtrar_por_username(username)
     #    return qs
 
-class DetailMs(LoginRequiredMixin, DetailView):
+class DetailMs(LoginRequiredMixin,CanalFormMixin, DetailView):
 
     template_name= 'MatesApp/canal_detail.html'
 

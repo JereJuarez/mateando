@@ -98,10 +98,11 @@ class CanalManager(models.Manager):
             return qs.order_by("tiempo").first(), False
 
         User=apps.get_model("auth", model_name='User')
-        usaurio_a, usuario_b= None, None
+        usaurio_a= None
+        usuario_b= None
 
         try:
-            usuario_a= User.objects.get(username=username_a)
+            usaurio_a= User.objects.get(username=username_a)
         except User.DoesNotExist:
             return None, False
 
