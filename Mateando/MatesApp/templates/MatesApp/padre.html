@@ -32,6 +32,7 @@
                             <li class="nav-item"><a class="nav-link active" href="{% url 'register' %}"><p style="color:#ff0000";>REGISTRARSE</p></a></li>
                         {% else %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'EditarPerfil' %}"><p style="color:#fcfcfc";>  ¿Unos mates {{ request.user.username }}?</p>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'agregarAvatar' %}">Cambiar Avatar</a></li>
                         <li class="nav-item"><a class="nav-link active" href="{% url 'logout' %}"><p style="color:#ff0000";>SALIR</p></a></li>
                         {% endif %}
                     </ul>

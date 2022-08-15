@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block contenedor %}
+
+<h1>
+    Bienvenido {{user}}. Inbox
+
+</h1>
+
+
+{% for inbox in inbox %}
+<div class="div_inbox">
+
+
+        {% for second_user in inbox.canalusuario_set.all %}
+
+            {% if second_user.usuario == request.user %}
+
+            {% else %}
+
+                <a href="">
+                    <p>
+                        {{second_user.usuario}}
+
+                    </p>
+                    <small>
+                        ({{inbox.canalmensaje_set.count}}) Mensajes
+                    </small>
+                </a>
+
+            {% endif %}
+
+        {% endfor %}
+        
+        
+    
+
+</div>
+
+
+{% empty %}
+
+
+<h2>
+    Inbox Vacío
+
+</h2>
+{% endfor %}
+
+
+{% endblock %}

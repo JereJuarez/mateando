@@ -38,6 +38,14 @@ class UserEditForm(UserCreationForm):
 class AvatarForm(forms.Form):
     imagen= forms.ImageField(label="Imagen")
 
-        
+
+#PARA EL CHAT
+
+class FormMensajes(forms.Form):
+    mensaje= forms.CharField(widget=forms.Textarea(attrs= {
+
+            "class": "formulario_ms",
+            "placeholder": "Escribe tu mensaje"
+    }))
 
     
