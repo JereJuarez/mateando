@@ -1,6 +1,6 @@
 from tkinter import E
 from django.contrib import admin
-from .models import Avatar, Usuario, Yerba, Canal, CanalMensaje, CanalUsuario  
+from .models import Avatar, Usuario, Yerba, Canal, CanalMensaje, CanalUsuario, Posteo  
 # Register your models here.
 
 
@@ -25,3 +25,5 @@ admin.site.register(Avatar)
 admin.site.register(Canal, CanalAdmin)
 admin.site.register(CanalMensaje)
 admin.site.register(CanalUsuario)
+admin.site.register(Posteo) 
+

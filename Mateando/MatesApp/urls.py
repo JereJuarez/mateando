@@ -27,5 +27,8 @@ urlpatterns = [
     path('inbox/ms/<str:username>', views.DetailMs.as_view(), name="detailms" ),
     re_path(UUID_CANAL_REGEX, views.CanalDetailView.as_view()),
     path('inbox/', views.Inbox.as_view(), name="inbox" ),
-    path('inbox/ms/', views.ms, name="dm")
+    path('inbox/ms/', views.ms, name="dm"),
+    path('blog/', views.blog, name='blog'),
+    path('publicar/', views.SharePost, name='publicar'),
+    path('delete/<post_author>', views.DeletePost, name='deletepost'),
 ]

@@ -1,0 +1,29 @@
+{% extends "MatesApp/padre.html" %}
+
+{% load static %}
+
+
+{% block contenido_que_cambia %}
+
+{% if miFormulario.errors %}
+<p style="color: red;">Esta mal los datos, revisar.</p>
+{% endif %}
+
+
+<form action="{% url 'publicar'%}" method="post">{% csrf_token %}
+
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+    
+    <input type="SUBMIT", value="ENVIAR">
+
+
+</form>
+
+                
+
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "MatesApp/padre.html" %}
+
+{% load static %}
+
+
+{% block contenido_que_cambia %}
+
+{% load static %}
+<link rel="stylesheet" type= "text/css "href="{% static 'estilos.css' %}">
+<h1>Bienvenidos al Blog</h1>
+<button>
+    <a href="{% url 'publicar'  %}">Publicar post</a>
+</button>
+<section>
+    {% for p in posteos %}
+        <article>
+            <h3>{{ p.nombre}}</h3>
+            <p>{{p.contenido}}</p>
+            <img src="{{p.imagen}}">
+            <p>Autor: {{p.author}}</p>
+            <button>
+                <a href="{% url 'deletepost' p.author %}">Eliminar</a>
+            </button>
+        </article>
+    {% endfor %}
+</section>
+
+
+
+
+{% endblock %}

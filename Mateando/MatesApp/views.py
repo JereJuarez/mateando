@@ -2,8 +2,8 @@ from contextvars import copy_context
 from urllib.request import Request
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, HttpRequest 
-from MatesApp.models import Yerba, Avatar, CanalMensaje, CanalUsuario, Canal, CanalManager, CanalQuerySet
-from MatesApp.forms import UserRegisterForm, UserEditForm, AvatarForm, FormMensajes
+from MatesApp.models import Yerba, Avatar, CanalMensaje, CanalUsuario, Canal, CanalManager, CanalQuerySet, Posteo
+from MatesApp.forms import UserRegisterForm, UserEditForm, AvatarForm, FormMensajes, SendPostForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -340,6 +340,50 @@ def mensajes_privados(request, username, *args, **kwargs):
     print(mensaje_canal.values("texto"))
 
     return HttpResponse(f"Nuestro Id del Canal - {canal.id}")
+
+
+
+
+
+
+#POST
+
+
+def SharePost (request):  #PUBLICAR POSTS
+
+    if request.method == 'POST':
+
+        miFormulario = SendPostForm(request.POST)
+
+        print(miFormulario)
+
+        if miFormulario.is_valid():
+
+            informacion = miFormulario.cleaned_data
+
+            post= Posteo(nombre=informacion["nombre"], contenido=informacion["contenido"], imagen=informacion["imagen"], author=informacion["author"])
+            post.save()
+            return render(request,'MatesApp/postenviado.html')
+    
+
+    else:
+        miFormulario= SendPostForm()
+
+    return render(request,'MatesApp/sendpost.html', {'miFormulario':miFormulario})
+
+
+
+def DeletePost(request, post_author): #ELIMINAR POST
+    post= Posteo.objects.get(author=post_author)
+    post.delete()
+
+    publicaciones= Posteo.objects.all() #trae todos los post
+
+    return render(request, "MatesApp/blog.html", {"publicaciones":publicaciones})
+
+def blog(request):
+    posteos = Posteo.objects.all() #trae todos los post
+    return render(request, "MatesApp/blog.html",{"posteos": posteos} )
 
 
 

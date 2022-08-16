@@ -49,3 +49,12 @@ class FormMensajes(forms.Form):
     }))
 
     
+
+#BLOG
+
+class SendPostForm(forms.Form):                    
+
+    nombre= forms.CharField(label='Nombre')
+    contenido= forms.CharField(label="Contenido")
+    imagen= forms.URLField(label='Link URL(imagen)')
+    author= forms.CharField(label='Author')
