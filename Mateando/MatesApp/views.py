@@ -22,19 +22,19 @@ from django.conf.urls import handler404
 #URL
 
 
-@login_required
+
 def inicio(request):
 
-    #avatares= Avatar.objects.filter(user=request.user.id)    (chilla)
+    avatares= Avatar.objects.filter(user=request.user.id)  
 
-    return render(request, "MatesApp/inicio.html") #{"url":avatares[0].imagen.url})
+    return render(request, "MatesApp/inicio.html") #{"url":avatares[0].imagen.url}) chilla cuando no tiene avata
 
 @login_required
 def yerbas(request):
     
-    #avatares= Avatar.objects.filter(user=request.user.id)    (chilla)
+    avatares= Avatar.objects.filter(user=request.user.id)   
 
-    return render(request, "MatesApp/yerbas.html") #{"url":avatares[0].imagen.url})
+    return render(request, "MatesApp/yerbas.html")#{"url":avatares[0].imagen.url}) chilla cuando no tiene avatar
 
 def __str__(self):
     return f"Nombre: {self.nombre} - Edad {self.edad} - Yerba {self.yerba}"
@@ -379,11 +379,18 @@ def DeletePost(request, post_author): #ELIMINAR POST
 
     publicaciones= Posteo.objects.all() #trae todos los post
 
-    return render(request, "MatesApp/blog.html", {"publicaciones":publicaciones})
+    return render(request, "MatesApp/inicio.html", {"publicaciones":publicaciones})
 @login_required
 def blog(request):
     posteos = Posteo.objects.all() #trae todos los post
     return render(request, "MatesApp/blog.html",{"posteos": posteos} )
+
+
+#ACERCA DE NOSOTROS
+
+def AboutMe(request):
+    return render(request, "MatesApp/aboutme.html")
+
 
 
 

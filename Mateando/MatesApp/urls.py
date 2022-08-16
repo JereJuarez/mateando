@@ -31,4 +31,5 @@ urlpatterns = [
     path('blog/', views.blog, name='blog'),
     path('publicar/', views.SharePost, name='publicar'),
     path('delete/<post_author>', views.DeletePost, name='deletepost'),
+    path('aboutme/', views.AboutMe, name='aboutme'),
 ]

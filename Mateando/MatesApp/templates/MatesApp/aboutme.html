@@ -1,0 +1,31 @@
+{% extends "MatesApp/padre.html" %}
+
+{% load static %}
+
+
+{% block contenido_que_cambia %}
+
+{% load static %}
+<link rel="stylesheet" type= "text/css "href="{% static 'estilos.css' %}">
+<h1>Gracias por visitar nuestro blog!</h1>
+<section>
+    <article>
+        <h2>Franco Ayet</h2>
+        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHWkdhtTb_6aw/profile-displayphoto-shrink_200_200/0/1616700264727?e=2147483647&v=beta&t=gVpb_YWmjutiG6kF1Rv2Zr3HZgC7wfrHAES3kwXANyM" alt="">
+        <p>Hola, como esta? Mi nombre es Franco Ayet, Hola, como esta? Mi nombre es Franco Ayet, soy de la provincia de La Rioja, Argentina. Actualmente tengo 21 años y
+            estoy cursando 3er año de la carrera Ing. En Sistemas De Informacion. Comence con el curso de python en "CoderHouse" 
+            porque necesitaba reforzar mis conocimientos, y aprender algo del framework Django. Personalmente, he llevado el curso 
+            de una manera muy tranquila y pude aprender bastante.
+        </p>
+    </article>
+    <article>
+        <h2>Jeremias Juarez</h2>
+        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQF6X8idrgSEnQ/profile-displayphoto-shrink_800_800/0/1644998183455?e=1666224000&v=beta&t=h-UmWq7--pRejx2SsfTqig3n3sUlIFen41FCXg1sNO8" width="220">
+        <p>Hola, como esta? Mi nombre es Jeremias Juarez, soy de Genereal Alvear, Mendoza, pero actualmente viviendo en Libertador San Martin, Entre Rios. Soy estudianto de Psicologia, cursando 
+            4 año, comence a meterme en la programacion por medios de videos, y luego decidi por el curso de Python de "CoderHouse", quisiera agradecerles a todo el equipo que se encargo de 
+            llevar el curso adelante, y que gracias a ellos hoy puedo cumplir con el proyecto final, muchas gracias!
+        </p>
+    </article>
+</section>
+
+{% endblock %}

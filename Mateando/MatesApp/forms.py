@@ -54,7 +54,7 @@ class FormMensajes(forms.Form):
 
 class SendPostForm(forms.Form):                    
 
-    nombre= forms.CharField(label='Nombre')
+    nombre= forms.CharField(label='Titulo')
     contenido= forms.CharField(label="Contenido")
     imagen= forms.URLField(label='Link URL(imagen)')
     author= forms.CharField(label='Author')

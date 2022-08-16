@@ -31,6 +31,7 @@
                         {% if not request.user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link active" href="{% url 'login' %}"><p style="color:#ff0000";>INICIAR SESIÓN</p></a></li>
                             <li class="nav-item"><a class="nav-link active" href="{% url 'register' %}"><p style="color:#ff0000";>REGISTRARSE</p></a></li>
+                            <li class="nav-item"><a class="nav-link active" href="{% url 'aboutme' %}">Acerca de Nosotros</a></li>
                         {% else %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'EditarPerfil' %}"><p style="color:#fcfcfc";>  ¿Unos mates {{ request.user.username }}?</p>
                         <li class="nav-item"><a class="nav-link" href="{% url 'agregarAvatar' %}">Cambiar Avatar</a></li>
