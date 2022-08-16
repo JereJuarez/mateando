@@ -4,18 +4,19 @@
 
 {% block contenido_que_cambia %}
 
-    <title>Cargar Avatar</title>
+
 
 
 <form action="{% url 'agregarAvatar'%}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
 
+    
     <table>
         {{ formulario.as_p }}
     </table>
         
-    <input type="submit" value="Actualizar Foto">
+    <input type="submit" value="Actualizar Foto"> ---------> ¡¡¡ATENCIÓN!!!
 
 
 </form>
-
+<h2>Cambiar Avatar (Solo para los que ya tienen foto de perfil)</h2>
 {% endblock %}

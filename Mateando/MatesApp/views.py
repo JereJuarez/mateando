@@ -372,7 +372,7 @@ def SharePost (request):  #PUBLICAR POSTS
     return render(request,'MatesApp/sendpost.html', {'miFormulario':miFormulario})
 
 
-
+@login_required
 def DeletePost(request, post_author): #ELIMINAR POST
     post= Posteo.objects.get(author=post_author)
     post.delete()
@@ -380,7 +380,7 @@ def DeletePost(request, post_author): #ELIMINAR POST
     publicaciones= Posteo.objects.all() #trae todos los post
 
     return render(request, "MatesApp/blog.html", {"publicaciones":publicaciones})
-
+@login_required
 def blog(request):
     posteos = Posteo.objects.all() #trae todos los post
     return render(request, "MatesApp/blog.html",{"posteos": posteos} )
