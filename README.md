@@ -11,8 +11,7 @@
 
  Ayet, Franco:
 
- - Realizó todo lo que respecta a los post del blog, además fue el autor de los test-pilot y el video demostrativo sobre la página. Tambien realizó la vista "acerca de mi"    ACLARACIÓN----> ["FALTAN SUS ARCHIVOS PORQUE TUVO UN ACCIDENTE DE TRANSITO Y SE ENCUENTRA DEMORADO"]
+ - Realizó todo lo que respecta a los post del blog, además fue el autor de los test-pilot y el video demostrativo sobre la página. Tambien realizó la vista "acerca de mi"    
 
 video: https://www.youtube.com/watch?v=BQTXe3a5C6A
 
-link actualizado: https://github.com/Fa7et/blogfinal
